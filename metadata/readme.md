@@ -1,0 +1,1 @@
+This directory contains physicochemial measurements, to be contextualized with eDNA data. The procedure how to connect ASV and metadata is described in. Detailed analyses in subsequent studies are linked via their DOI in script XX.
