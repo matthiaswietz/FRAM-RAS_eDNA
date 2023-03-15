@@ -1,0 +1,1 @@
+This directory contains output files (ASV tables, TAX tables, metadata) for subsequent processing & reformatting, resulting in the final output tables subsetted for individual studies as described in XX
