@@ -1,4 +1,4 @@
-This directory contains DADA2 output files for both 16S and 18S rRNA amplicons.
+This directory contains merged, chimera-checked and taxonomy-assigned DADA2 output files.
 
 16S RNA:
 - [ASV table](../output/bacSeqtab.txt)
