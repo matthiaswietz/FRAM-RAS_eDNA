@@ -12,16 +12,11 @@ library(cowplot)
 library(dplyr)
 library(tibble)
 library(gtools)
-#load("_RAS_DataLoad.Rdata")
-load("iNEXT_bac.RData")
-load("iNEXT_euk.RData")
 
 ############################################################################################
 ###  RAREFACTION AND COVERAGE  ###
 ############################################################################################
 
-#iNEXT.bac <- otu_table(
-# ASV.bac, taxa_are_rows=F)
 iNEXT.bac <- iNEXT(
   ASV.bac, datatype="abundance", 
   q=c(0), conf=0.95, nboot=100)
@@ -165,20 +160,6 @@ AlphaDiv <- rbind(
   div.bac, div.euk) %>%
   left_join(ENV)
 
-
-###########################################################################################
-###   export for individual studies ###
-###########################################################################################
-
-# F4 2016-20 (doi)
-
-AlphaDiv %>%
-  filter(mooring=="F4") %>%
-  write.table(
-    file="../MetaG-WSC/Rstats/AlphaDiv.txt",
-    sep="\t", row.names=F, col.names=T, quote=F)
-  
-
 ###############################################################
 
 # remove temp-data
@@ -193,9 +174,3 @@ rm(list = ls(pattern =
 # Save data
 save(iNEXT.bac, file="iNEXT_bac.RData")
 save(iNEXT.euk, file="iNEXT_euk.RData")
-
-
-########
-
-#load("/AWI_MPI/FRAM/RAS/ampliconTimeseries/iNEXT_bac.Rdata")
-#load("/AWI_MPI/FRAM/RAS/ampliconTimeseries/iNEXT_euk.Rdata")
