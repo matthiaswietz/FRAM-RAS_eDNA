@@ -12,7 +12,7 @@ This repo describes processing of eDNA samples from autonomous Remote Access Sam
 
 - [output](./output): ASV table, taxonony table, and ASV sequences from both 16S and 18S metabarcoding. Furthermore, ENA accession numbers of all raw fastq files for [16S](./output/ENA_16S_fastq.txt) and [18S](./output/ENA_18S_fastq.txt) amplicons. 
 
-- [metadata](./metadata):  physicochemical measurements and general sample information, needed for detailed analyses as described in the following. Original fastq files and sample information can be macthed via columns "sample_title" found in both [sample_info.txt](./metadata/sample_info.txt) and ENA txtfiles in the [output](./output) directory.
+- [metadata](./metadata):  physicochemical measurements and general sample information, needed for detailed analyses as described in the following. Original fastq files and sample information can be matched via columns "sample_title" listed in [sample_info.txt](./metadata/sample_info.txt) and ENA txtfiles in the [output](./output) directory.
 
 This top-level directory contains Rscripts to further process the original data. This includes script [DataLoad.R](./DataLoad.R) to account for negative control counts, refomat taxonomic names if appropriate, and connect with environmental data deposited in [metadata](./metadata). In case samples from several timepoints were pooled, a "mean date" is calculated, and the corresponding environmental parameters averaged as well. 
 
