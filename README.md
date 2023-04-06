@@ -2,7 +2,7 @@
 
 This repo describes the bioinformatic pipeline from raw fastq reads to ASV counts, including primer clipping and ASV generation. Reads were obtained by PCR of environmental DNA (eDNA) with 16S and 18S rRNA primers, followed by Illumina MiSeq sequencing and generation of amplicon sequence variants (ASVs) using DADA2. Each Illumina run was processed individually following the developer's guidelines (https://benjjneb.github.io/dada2/tutorial_1_8.html), and then merged before chimera removal and taxonomic assignment. 
 
-This repo describes processing of eDNA samples from autonomous Remote Access Samplers (RAS) in the FRAM-LTER (https://www.awi.de/en/expedition/observatories/ocean-fram.html). Scripts are however generalizable to any ribosomal metabarcoding of eDNA. 
+This repo describes processing of eDNA samples from autonomous Remote Access Samplers (RAS) in the FRAM Observatory (https://www.awi.de/en/expedition/observatories/ocean-fram.html). Scripts are however generalizable to any ribosomal metabarcoding of eDNA. 
 
 ### Organization of directories and files 
 
