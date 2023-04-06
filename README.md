@@ -14,6 +14,6 @@ This repo describes processing of eDNA samples from autonomous Remote Access Sam
 
 - [metadata](./metadata):  physicochemical measurements and general sample information, needed for detailed analyses as described in the following.
 
-This top-level directory contains Rscripts that further process the raw 16S/18S ASV tables. This includes script [DataLoad.R](./DataLoad.R) to account for negative control counts, refomat taxonomic names if appropriate, and connect with environmental data deposited in [metadata](./metadata). In case samples from several timepoints were pooled, a "mean date" is calculated, and the corresponding environmental parameters averaged as well. 
+This top-level directory contains Rscripts to further process the original data. This includes script [DataLoad.R](./DataLoad.R) to account for negative control counts, refomat taxonomic names if appropriate, and connect with environmental data deposited in [metadata](./metadata). In case samples from several timepoints were pooled, a "mean date" is calculated, and the corresponding environmental parameters averaged as well. 
 
 The script [RarefacDiversity.R](./RarefacDiversity.R) then calculates alpha-diversity indices on ASV tables. Finally, script [DataExport.R](./DataExport.R) subsets the full ASV and metadata tables for individual studies, e.g. Wietz et al. (https://www.nature.com/articles/s43705-021-00074-4) and Priest et al. (https://www.biorxiv.org/content/10.1101/2022.08.12.503524v2).
