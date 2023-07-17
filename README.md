@@ -8,9 +8,9 @@ All raw sequence files are stored under ENA Umbrella [PRJEB43905](https://www.eb
 
 ### Organization of directories and files 
 
-- [bac_processing](./bac_processing): Processing of 16S rRNA reads using individual DADA2 scripts per Illumina run, followed by script [MergeChimTax.R](./bac_processing/MergeChimTax.R) for merging sequence tables, chimera removal and taxonomy assignment (SILVA). 
+- [bac_processing](./bac_processing): Processing of 16S rRNA reads using individual DADA2 scripts per Illumina run, followed by script [MergeChimTax.R](./bac_processing/MergeChimTax.R) for merging sequence tables, chimera removal and taxonomy assignment [(SILVA database)](https://zenodo.org/record/4587955). 
 
-- [euk_processing](./euk_processing): Processing of 18S rRNA reads using individual DADA2 scripts per Illumina run, followed by script [MergeChimTax.R](./euk_processing/MergeChimTax.R) for merging sequence tables, chimera removal and taxonomy assignment (PR2). 
+- [euk_processing](./euk_processing): Processing of 18S rRNA reads using individual DADA2 scripts per Illumina run, followed by script [MergeChimTax.R](./euk_processing/MergeChimTax.R) for merging sequence tables, chimera removal and taxonomy assignment [(PR2 database)](https://github.com/pr2database/pr2database/releases). 
 
 - [output](./output): ASV table, taxonony table, and ASV sequences from both 16S and 18S metabarcoding. Furthermore, ENA accession numbers of all raw fastq files for [16S](./output/ENA_16S_fastq.txt) and [18S](./output/ENA_18S_fastq.txt) amplicons. 
 
