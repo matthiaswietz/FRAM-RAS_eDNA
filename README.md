@@ -2,7 +2,7 @@
 
 This repo describes ribosomal metabarcoding of environmental DNA (eDNA), collected using autonomous Remote Access Samplers (RAS) in the [FRAM long-term observatory](https://www.awi.de/en/expedition/observatories/ocean-fram.html) of the Alfred Wegener Institute. Scripts are however generalizable to any ribosomal metabarcoding of eDNA. 
 
-The bioinformatic pipeline comprises all steps from raw fastq reads to ASV counts, including primer clipping and generation of amplicon sequence variants (ASVs). Reads were obtained by PCR with 16S and 18S rRNA primers, followed by Illumina MiSeq sequencing and ASV generation with DADA2. Each Illumina run was processed individually following [the DADA2 tutorial](https://benjjneb.github.io/dada2/tutorial_1_8.html), and then merged before chimera removal and taxonomic assignment. 
+The bioinformatic pipeline covers all steps from primer clipping of raw reads to the generation of amplicon sequence variants (ASVs). Reads were obtained by PCR with 16S and 18S rRNA primers, followed by [Cutadapt primer clipping](https://cutadapt.readthedocs.io/en/stable/), Illumina MiSeq sequencing and ASV generation with [DADA2](https://www.nature.com/articles/nmeth.3869). Each Illumina run was processed individually following the [DADA2 tutorial](https://benjjneb.github.io/dada2/tutorial_1_8.html), and then merged before chimera removal and taxonomic assignment. 
 
 All raw sequence files are stored under ENA Umbrella [PRJEB43905](https://www.ebi.ac.uk/ena/browser/view/PRJEB43905).
 
