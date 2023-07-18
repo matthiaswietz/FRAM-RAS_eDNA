@@ -1,6 +1,6 @@
 ## eDNA metabarcoding of microbial communities  
 
-This repo describes the generation of amplicon reads from environmental DNA (eDNA), collected using autonomous Remote Access Samplers (RAS) in the [FRAM long-term observatory](https://www.awi.de/en/expedition/observatories/ocean-fram.html) of the Alfred Wegener Institute Helmholtz Centre for Polar and Marine Research. Scripts are however generalizable to any ribosomal metabarcoding of eDNA. 
+This repo describes metabarcoding analysis based on environmental DNA (eDNA), collected using autonomous Remote Access Samplers (RAS) in the [FRAM long-term observatory](https://www.awi.de/en/expedition/observatories/ocean-fram.html) of the Alfred Wegener Institute Helmholtz Centre for Polar and Marine Research. Scripts are however generalizable to any ribosomal metabarcoding of eDNA. 
 
 The bioinformatic pipeline comprises all steps from raw fastq reads to ASV counts, including primer clipping and generation of amplicon sequence variants (ASVs). Reads were obtained by PCR with 16S and 18S rRNA primers, followed by Illumina MiSeq sequencing and ASV generation with DADA2. Each Illumina run was processed individually following [the DADA2 tutorial](https://benjjneb.github.io/dada2/tutorial_1_8.html), and then merged before chimera removal and taxonomic assignment. 
 
