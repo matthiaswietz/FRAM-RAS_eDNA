@@ -1,4 +1,4 @@
-Overview of ENA accession numbers (all listed under ENA umbrella PRJEB43905)
+Overview of ENA accession numbers (all listed under ENA umbrella PRJEB43905).
 
 | locus_tag | BioProject | timeframe | moorings             |
 |-----------|------------|-----------|----------------------|
@@ -12,3 +12,5 @@ Overview of ENA accession numbers (all listed under ENA umbrella PRJEB43905)
 | 18S       | PRJEB43885 | 2017-2018 | F4, HG-IV, Fevi, EGC |
 | 18S       | PRJEB66212 | 2018-2019 | F4                   |
 | 18S       | PRJEB66220 | 2019-2020 | F4                   |
+
+The files [ENA_16S.txt](ENA_16S.txt) and [ENA_18S.txt](ENA_18S.txt) list accession numbers for each individual fastq file.
