@@ -1,4 +1,4 @@
-Overview of ENA accession numbers (all listed under ENA umbrella PRJEB43905).
+**Overview of ENA accession numbers** (all under ENA umbrella PRJEB43905)
 
 | locus_tag | BioProject | timeframe | moorings             |
 |-----------|------------|-----------|----------------------|
