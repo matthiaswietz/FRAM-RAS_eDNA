@@ -2,11 +2,11 @@
 ###  FRAM-RAS -- AMPLICON TIME-SERIES  ###
 ############################################################################################
 
-# Formatting of dada2 ASVs
+# Formatting ASVs
 # Formatting taxonomy
 # Contaminant check
-# Alpha-Diversity of cleaned ASV table
-# Basic metadata: mean date (if bags pooled)
+# Alpha-diversity of cleaned ASV table
+# Calculate mean date (if sample bags were pooled)
 # Also CTD-depth added (needed for Gfbio)
 # Nutrients, ice-cover, chlorophyll
 
@@ -15,14 +15,13 @@
 
 ####################################
 
-# Set working directory
-setwd("/Users/mwietz/ownCloud - mwietz@owncloud.mpi-bremen.de/AWI_MPI/FRAM/RAS/ampliconTimeseries")
+# Set working directory -- adjust for yourself
+setwd("")
 
 library(gtools)
 library(dplyr)
 library(tidyr)
 library(solartime)
-#load("_RAS_DataLoad.Rdata")
 
 
 ############################################################################################
