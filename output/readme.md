@@ -1,5 +1,7 @@
 This directory contains merged, chimera-checked and taxonomy-assigned DADA2 output files.
 
+Results cover the timeframe 2016-2020. 
+
 16S RNA:
 - [ASV table](../output/bacSeqtab.txt)
 - [taxonomy table](../output/bacTax.txt) 
