@@ -2,7 +2,7 @@
 
 This repo describes the bioinformatic pipeline for ribosomal metabarcoding of environmental DNA (eDNA) derived from autonomous samplers in the [FRAM Observatory](https://www.awi.de/en/expedition/observatories/ocean-fram.html) of the Alfred Wegener Institute. Scripts are however generalizable to any ribosomal metabarcoding of eDNA. 
 
-The repo covers all steps from primer clipping to the generation of amplicon sequence variants (ASVs). Reads were obtained by 16S and 18S rRNA PCR, followed by [primer clipping](https://cutadapt.readthedocs.io/en/stable/), MiSeq sequencing, and ASV generation via [DADA2](https://benjjneb.github.io/dada2/tutorial_1_8.html). 
+The repo covers all steps from primer clipping of 16S and 18S gene amplicons to the generation of amplicon sequence variants (ASVs) via [DADA2](https://benjjneb.github.io/dada2/tutorial_1_8.html). 
 
 All raw sequence files are stored under ENA Umbrella [PRJEB43905](https://www.ebi.ac.uk/ena/browser/view/PRJEB43905).
 
