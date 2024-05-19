@@ -1,4 +1,4 @@
-Directory containing individual DADA2 scripts per Illumina sequencing run (identifed by five-character ID) of 18S rRNA amplicons from eDNA. 
+Directory containing DADA2 scripts for each Illumina sequencing run (identified by five-character ID) to process 18S rRNA amplicon sequences. 
 
 Primer clipping is done using script [cutadapt.sh](./cutadapt.sh).
 
