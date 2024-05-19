@@ -1,6 +1,6 @@
-Directory containing DADA2 scripts for each Illumina sequencing run (identified by five-character ID) to process 18S rRNA amplicon sequences. 
+DADA2 scripts to process 18S rRNA amplicon sequences; separately per MiSeq run (identified by five-character ID). 
 
-Primer clipping is done using script [cutadapt.sh](./cutadapt.sh).
+Primer clipping is done with [Cutadapt](https://cutadapt.readthedocs.io/en/stable/) via [this script](./cutadapt.sh).
 
 Individual sequence tables are then merged, chimera-checked and taxonomy-asigned using script [MergeChimTax.R](./MergeChimTax.R).
 
