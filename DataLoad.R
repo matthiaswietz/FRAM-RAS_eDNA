@@ -431,7 +431,6 @@ ENV <- ENV %>%
     monthFull = format(date, "%b-%y"),  
     month = format(date, "%b"),        
     jday = as.numeric(format(date, "%j"))) %>%
-  arrange(locus_tag, mooring, date) %>%
   filter(!grepl("Neg", RAS_id))
 
 # Sort in correct order
