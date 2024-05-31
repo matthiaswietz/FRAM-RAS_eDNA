@@ -57,7 +57,6 @@ meanDate <- read.csv(
     "03_2017_F4_1","04_2017_EGC_2")) %>%
   mutate_at(vars(date1, date2, date3, date4),
     as.Date, format="%Y-%m-%d") %>%
-  #na_if("") %>% 
   rowwise %>%
   mutate(date = mean.Date(c(
     date1, date2, date3, date4), na.rm=T)) %>%
@@ -305,7 +304,7 @@ TAX.euk <- TAX.euk %>%
 
 
 #####################################################
- ###  LOAD + FORMAT ENV-DATA  ###
+ ### LOAD + FORMAT ENV-DATA ###
 #####################################################
 
 ## CTD data ##
@@ -340,10 +339,12 @@ Strat <- read.table(
 IceConc <- read.table(
   "/AWI_MPI/FRAM/RAS/ampliconTimeseries/metadata/IceConc.txt",
   h=T, sep = "\t",  check.names=F) %>%
-  mutate(date = as.Date(paste(
-    yyyy, mm, dd, sep = "-"), format = "%Y-%m-%d")) %>%
+  mutate(
+    mm = sprintf("%02d", mm), # Add leading zero 
+    dd = sprintf("%02d", dd), # Add leading zero 
+    date = paste(yyyy, mm, dd, sep = "-"))  %>%
   dplyr::select(-c(yyyy, mm, dd)) %>%
-  reshape2::melt() %>%
+  reshape2::melt(id.vars=c("date")) %>%
   dplyr::rename(
     mooring = variable, 
     iceConc = value) %>% 
@@ -368,8 +369,10 @@ IceConcPast <- IceConcPast %>%
 IceDist <- read.table(
   "/AWI_MPI/FRAM/RAS/ampliconTimeseries/metadata/IceDist.txt",
   h=T, sep="\t",  check.names=F) %>% 
-  mutate(date = as.Date(paste(
-    yyyy, mm, dd, sep = "-"), format = "%Y-%m-%d")) %>%
+  mutate(
+    mm = sprintf("%02d", mm), # Add leading zero 
+    dd = sprintf("%02d", dd), # Add leading zero 
+    date = paste(yyyy, mm, dd, sep = "-")) %>%
   dplyr::select(-c(yyyy, mm, dd)) %>%
   reshape2::melt() %>%
   dplyr::rename(
@@ -424,8 +427,6 @@ ENV <- ENV %>%
   ungroup() %>% 
   left_join(meanDate) %>%
   mutate_if(is.numeric, ~ifelse(is.nan(.), NA, round(., 2))) %>%
-  #mutate_if(is.numeric, round, 2) %>%
- # mutate_if(is.numeric, ~ifelse(is.nan(.), NA, .)) %>%
   mutate(date = as.Date(date, format = "%Y-%m-%d")) %>%  
   mutate(
     monthFull = format(date, "%b-%y"),  
@@ -511,9 +512,9 @@ seq.bac <- as.data.frame(sread(readFasta(
 
 # Export combined data
 setNames(as.character(
-  seq.bac$x), asv.fa$id) %>%
+  seq.bac$x), seq.bac$id) %>%
   write.table(
-    ., file="../bacASV.fasta",sep="\n", 
+    file="./bac_output/bacASV.fasta",sep="\n", 
     row.names=T, col.names=F, quote=F)
 
 ##########################
@@ -534,16 +535,17 @@ seq.euk <- as.data.frame(sread(readFasta(
     "_Clade|_clade| uc", "", .))) 
 
 # Export combined data
-setNames(as.character(seq.euk$x), seq.euk$id) %>%
-  write.table(file="eukASV.fasta",sep="\n", 
+setNames(as.character(
+  seq.euk$x), seq.euk$id) %>%
+  write.table(
+    file="./euk_output/eukASV.fasta",sep="\n", 
     row.names=T, col.names=F, quote=F)
-
 
 #############################################
 
 # Remove temporary data
 rm(asv1, asv2, asv3, NK25, NK30, NK35,
-   temp, i, j, k)
+   temp, i, j, k, tax)
 
 # Save everything
 save.image("_RAS.Rdata")
