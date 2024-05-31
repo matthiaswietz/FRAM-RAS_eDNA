@@ -310,8 +310,7 @@ TAX.euk <- TAX.euk %>%
 ## CTD data ##
 CTD <- read.table(
   "/AWI_MPI/FRAM/RAS/ampliconTimeseries/metadata/CTD.txt", 
-  h=T, sep="\t", stringsAsFactors=F, skipNul=T) #%>%
-  #mutate_at(vars(date), as.Date, format = "%Y-%m-%d") 
+  h=T, sep="\t", stringsAsFactors=F, skipNul=T) 
 
 ## NUTRIENTS ##
 Nutri <- read.table(
@@ -354,7 +353,7 @@ IceConc <- read.table(
 
 # Calculate past ice conditions
 # Remove duplicates (16/18S per date)
-# fill up NAs with following RAS_id
+# Fill NAs with following RAS_id
 IceConcPast <- IceConc[!duplicated(
   IceConc$RAS_id, incomparables=NA),] %>%
   fill(RAS_id, .direction='up')
@@ -540,6 +539,7 @@ setNames(as.character(
   write.table(
     file="./euk_output/eukASV.fasta",sep="\n", 
     row.names=T, col.names=F, quote=F)
+
 
 #############################################
 
